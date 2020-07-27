@@ -1,0 +1,21 @@
+.mat-tab-group{
+	margin-bottom: 97px;
+    margin-left: 131px;
+    padding-left: 30px;
+    padding-right: 39px;
+    padding-bottom: 31px;
+    background-color: linen;
+    width: 90%;
+    padding-top: 20px;
+}
+h2.example-h2{
+	margin-top: 49px;
+    margin-left: 131px;
+    width: 90%;
+    background-color: #594a41;
+    color: white;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+}

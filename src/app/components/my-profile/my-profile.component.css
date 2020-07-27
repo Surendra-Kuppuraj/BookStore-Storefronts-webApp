@@ -1,0 +1,22 @@
+div.mat-tab-body-wrapper {
+	overflow : hidden;
+}
+div.form-group {
+	margin-left : 20px;
+}
+div.ng-star-inserted {
+	margin-bottom: 97px;
+    margin-left: 131px;
+    padding-left: 30px;
+    padding-right: 39px;
+    padding-bottom: 31px;
+    background-color: linen;
+    width: 100%;
+}
+div.row {
+    margin-top: 50px;
+    margin-left: 131px;
+    width: 100%;
+    background-color: #594a41;
+    color: white;
+}

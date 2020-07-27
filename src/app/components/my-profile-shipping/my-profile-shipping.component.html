@@ -1,0 +1,92 @@
+<div>
+	<p *ngIf="defaultShippingSet">Default shipping set successfully!</p>
+	<mat-tab-group (selectedIndexChange)="selectedShippingChange($event)"
+		[selectedIndex]="selectedShippingTab"> <mat-tab
+		label="List of Shipping Addresses">
+	<form (ngSubmit)="setDefaultShipping()" method="post">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Default</th>
+					<th>Shipping Address</th>
+					<th>Operations</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let userShipping of userShippingList">
+					<td><input mat-input type="radio" name="defaultUserShippingId"
+						[(ngModel)]="defaultUserShippingId" [value]="userShipping.id" />
+						<span>default</span></td>
+					<td>{{userShipping.address.street1}},
+						{{userShipping.address.street2}},
+						{{userShipping.address.state}}</td>
+					<td><a mat-button (click)="onUpdateShipping(userShipping)"><i
+							class="fa fa-pencil"></i></a> <a mat-button
+						(click)="onRemoveShipping(userShipping.id)"><i
+							class="fa fa-times"></i></a></td>
+				</tr>
+			</tbody>
+		</table>
+		<button mat-raised-button class="mat-primary" type="submit">Save</button>
+	</form>
+	</mat-tab> 
+	<mat-tab label="Add(Update) Shipping Address">
+		<br>
+	<form (ngSubmit)="onNewShipping()" method="post">
+		<div class="bg-info" *ngIf="updateUserShippingInfo">User info
+			updated.</div>
+		<input mat-input hidden="hidden" name="id" [(ngModel)]="userShipping.id" />
+		<div class="form-group">
+			<label for="shippingname">* Name</label> <input mat-input type="text"
+				class="form-control" id="shippingName" placeholder="Receiver Name"
+				name="userShippingName" required="required"
+				[(ngModel)]="userShipping.address.name" />
+		</div>
+		<div class="form-group">
+			<label for="shippingAddress">* Street Address</label> <input mat-input
+				type="text" class="form-control" id="shippingAddress"
+				placeholder="Street Address 1" name="userShippingStreet1"
+				required="required" [(ngModel)]="userShipping.address.street1" />
+		</div>
+		<div class="form-group">
+			<input mat-input type="text" class="form-control"
+				placeholder="Street Address 2" name="userShippingStreet2"
+				[(ngModel)]="userShipping.address.street2" />
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="form-group">
+					<label for="shippingCity">* City</label> <input mat-input type="text"
+						class="form-control" id="shippingCity"
+						placeholder="Your Shipping City" name="userShippingCity"
+						required="required" [(ngModel)]="userShipping.address.city" />
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="form-group">
+					<label for="shippingState">* State</label> <select
+						id="shippingState" class="form-control" name="userShippingState"
+						[(ngModel)]="userShipping.address.state" required="required">
+						<option value="" disabled>-- state --</option>
+						<option *ngFor="let state of stateList">{{state}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="form-group">
+					<label for="shippingZipcode">* Zipcode</label> <input mat-input type="text"
+						class="form-control" id="userShippingZipcode"
+						placeholder="Zipcode" name="userShippingZipcode"
+						required="required" [(ngModel)]="userShipping.address.zipcode" />
+				</div>
+			</div>
+		</div>
+
+
+		<hr />
+		<button mat-raised-button type="submit" class="mat-primary">
+			Save All</button>
+	</form>
+	</mat-tab> 
+</mat-tab-group>
+</div>

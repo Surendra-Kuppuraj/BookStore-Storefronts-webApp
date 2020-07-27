@@ -1,0 +1,29 @@
+.text-left {
+	padding-right: 845px;
+}
+#cart-product-item {
+	padding-right: 750px;
+}
+.cart-price-item {
+	padding-right: 158px;
+}
+#cart-boader {
+	border-bottom: 6px solid #594a41;
+	width:112%;
+}
+.cart-box {
+	border: 9px solid #594a41;
+	background-color: #594a41;
+	color: white;
+}
+
+#cart-price {
+	margin-left: 458px;
+}
+#cart-qty {
+	width: 70px;
+    margin-left: 157px;
+}
+.new-row {
+	width: 90%;
+}

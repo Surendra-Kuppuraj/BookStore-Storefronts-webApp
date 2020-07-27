@@ -1,0 +1,49 @@
+<div class="page-top"
+	style="width: 100%; height: 16px; background-color: #1d101b"></div>
+<nav class="navbar navbar-expand-lg navbar-light nav-custom-bar">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand pointer nav-title-format" routerLink="/home"><img
+				src="../../../assets/image/keys.png" class="img-responsive right"
+				style="width: 100px; z-index: 1;" /></a>
+		</div>
+		<div class="change">
+			<ul class="navbar-nav mr-auto">
+				<form (ngSubmit)="onSearchByTitle()"
+					class="form-inline my-2 my-lg-0">
+					<input type="text" name="searcyByTitle" [(ngModel)]="keyword"
+						class="form-control" style="border-color: #594a41;"
+						placeholder="Book Title" /> &nbsp;&nbsp;
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+						<span class="nav-title-format" style="color: white;">Search</span>
+					</button>
+				</form>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+			<ul class="navbar-nav mr-auto header-menu">
+				<li class="nav-item active"><a
+					class="nav-link nav-title-format"  id="bookClick"mat-button routerLink="/bookList"><span
+						class="nav-title-format boxed-header-menu">BOOK</span></a></li>
+				<li class="nav-item active" *ngIf="loggedIn"><a
+					class="nav-link nav-title-format" mat-button
+					routerLink="/shoppingCart"><span
+						class="nav-title-format boxed-header-menu">SHOPPING CART</span></a></li>
+				<li class="nav-item active" *ngIf="loggedIn"><a
+					class="nav-link nav-title-format" mat-button
+					routerLink="/myProfile"><span
+						class="nav-title-format boxed-header-menu">MY PROFILE</span></a></li>
+				<li class="nav-item active" *ngIf="loggedIn"><a
+					class="nav-link nav-title-format" mat-button (click)="logout()"><span
+						class="nav-title-format boxed-header-menu">LOGOUT</span></a></li>
+				<li class="nav-item active" *ngIf="!loggedIn"><a
+					class="nav-link nav-title-format" mat-button
+					routerLink="/myAccount"><span
+						class="nav-title-format boxed-header-menu">MY ACCOUNT</span></a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="page-top"
+	style="width: 100%; height: 8px; background-color: #1d101b"></div>

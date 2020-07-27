@@ -1,0 +1,12 @@
+.book-detail-row {
+	margin-left: 35px;
+}
+.book-detail-image{
+	width: 70%;
+    height: 85%;
+}
+
+.book-detail-display{
+	padding-top: 10px;
+    margin-left: 3px;
+}
